@@ -1,5 +1,5 @@
 export interface IScores {
-    player_id: string,
+    id: string,
     score: number,
     timestamp: Date,
 }
