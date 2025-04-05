@@ -1,0 +1,7 @@
+.searchPlayerButton {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  max-width: 70%;
+  margin: auto;
+}

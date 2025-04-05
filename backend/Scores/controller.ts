@@ -4,6 +4,7 @@ import { CustomError } from "../Error/types"
 import { IScores } from "./types";
 import { Score } from "./model";
 
+//Kan inte vara under 0 och skulle kunna uppdatera score för en viss player om den är högre.
 export const addScore = asyncErrorHandler(async (req: Request, res: Response) => {
     const createdScore = req.body as IScores;
 
@@ -21,6 +22,7 @@ type ScoreLimitQuery = {
     top?: string
 }
 
+//Finns en bugg där den inte visar rätt ordning när det finns flera spelare med samma score.
 export const getTop10Scores = asyncErrorHandler(async (req: Request<{}, {}, {}, ScoreLimitQuery>, res: Response) => {
     const limit: number = req.query.top ? parseInt(req.query.top) : 0;
 
