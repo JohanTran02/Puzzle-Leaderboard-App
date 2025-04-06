@@ -39,9 +39,3 @@ export class CustomError extends MongooseError {
         };
     }
 }
-
-export type MongooseErrorHandler = {
-    "ValidationError": ({ error, errors }: { error: CustomError, errors: mongoose.Error.ValidationError["errors"] }) => CustomError;
-    "CastError": (error: mongoose.Error.CastError) => CustomError;
-    "DocumentNotFoundError": (error: mongoose.Error.DocumentNotFoundError) => CustomError;
-};

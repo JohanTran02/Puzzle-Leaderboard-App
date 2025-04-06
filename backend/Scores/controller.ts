@@ -23,6 +23,7 @@ type ScoreLimitQuery = {
 }
 
 //Finns en bugg där den inte visar rätt ordning när det finns flera spelare med samma score.
+//Kanske sortera utifrån score och timestamp?
 export const getTop10Scores = asyncErrorHandler(async (req: Request<{}, {}, {}, ScoreLimitQuery>, res: Response) => {
     const limit: number = req.query.top ? parseInt(req.query.top) : 0;
 

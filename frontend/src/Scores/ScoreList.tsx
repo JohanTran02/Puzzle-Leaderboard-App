@@ -7,6 +7,7 @@ export default function ScoreList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error>({} as Error);
     useEffect(() => {
+        //Borde uppdateras när man lägger till ett score
         const fetchScores = async () => {
             try {
                 const response = await fetch(`http://localhost:3000/api/scores/?top=10`, {
